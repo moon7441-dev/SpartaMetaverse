@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Interaction1Interactable : MonoBehaviour
+public class FallAndFade2D : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()

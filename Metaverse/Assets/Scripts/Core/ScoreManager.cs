@@ -1,18 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering;
 
-public class ScoreManager : MonoBehaviour
+public static class  ScoreManager
 {
-    // Start is called before the first frame update
-    void Start()
+    private static int _lastScore;
+    public static int LastScore => _lastScore;
+
+    public static int GetHighScore(string key)
     {
-        
+        return PlayerPrefs.GetInt($"HS_{key}", 0);
     }
 
-    // Update is called once per frame
-    void Update()
+    public static void submitScore(string Key, int score)
     {
-        
+        _lastScore = score;
+        int hs = GetHighScore(Key);
+        if (score > hs)
+        {
+            PlayerPrefs.SetInt($"HS_{Key}", score);
+            PlayerPrefs.Save();
+        }
     }
 }
