@@ -4,17 +4,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
-{
-    public static string LastHubScene = "Hub";
+{ 
 
     public static void LoadMini(string sceneName)
     {
-        LastHubScene = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
     }
 
-    public static void BackToHub()
+    public static void LoadHub(string sceneName)
     {
-        SceneManager.LoadScene(LastHubScene);
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
     }
 }

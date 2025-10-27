@@ -80,7 +80,7 @@ public class StackGame : MonoBehaviour
 
     public void OnClick_BackToHub()
     {
-        SceneLoader.BackToHub();
+        SceneLoader.LoadHub("HubScene");
     }
 }
 

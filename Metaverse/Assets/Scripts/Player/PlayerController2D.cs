@@ -7,12 +7,14 @@ public class PlayerController2D : MonoBehaviour
 {
     [Header("Move")]
     public float moveSpeed = 5f;
-
-    private Rigidbody2D _rb;
-    private Vector2 _input;
+    
+    Rigidbody2D _rb;
+    Vector2 _input;
+    Animator _anim;
 
     private void Awake()
     {
+        _anim = GetComponent<Animator>();
         _rb = GetComponent<Rigidbody2D>();
         _rb.gravityScale = 0f;  //탑다운이므로 중력X
         _rb.freezeRotation = true;
@@ -22,6 +24,11 @@ public class PlayerController2D : MonoBehaviour
         _input.x = Input.GetAxisRaw("Horizontal");
         _input.y = Input.GetAxisRaw("Vertical");
         _input = _input.normalized;
+
+        _anim.SetFloat("Speed", _input.magnitude);
+
+        if (_input.x != 0)
+            transform.localScale = new Vector3(Mathf.Sign(_input.x), 1, 1);
     }
 
     private void FixedUpdate()

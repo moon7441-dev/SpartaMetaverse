@@ -32,7 +32,7 @@ public class CameraFollow2D : MonoBehaviour
         float clampedX = Mathf.Clamp(desired.x, minBounds.x + horzExtent, maxBounds.x - horzExtent);
         float clampedY = Mathf.Clamp(desired.y, minBounds.y + horzExtent, maxBounds.y - vertExtent);
 
-        Vector3 clamped = new Vector3(clampedX, clampedY, clamped.z);
+        Vector3 clamped = new Vector3(clampedX, clampedY, desired.z);
         transform.position = Vector3.Lerp(transform.position, clamped, Time.deltaTime * smooth);
     }
 }
