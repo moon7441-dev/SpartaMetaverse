@@ -8,14 +8,15 @@ public class InteractionZone : MonoBehaviour
     public Interactable interactable;   //같은 오브젝트 또는 자식
     public GameObject promptUI;         //"E 키" 안내 패널
 
-    bool _canInteract;
+    private bool _canInteract = false;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             _canInteract = true;
-            if (promptUI) promptUI.SetActive(true);
+            if (promptUI) 
+                promptUI.SetActive(true);
         }
     }
 
@@ -24,7 +25,8 @@ public class InteractionZone : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             _canInteract = false;
-            if(promptUI) promptUI.SetActive(false);
+            if(promptUI)
+               promptUI.SetActive(false);
         }
     }
 

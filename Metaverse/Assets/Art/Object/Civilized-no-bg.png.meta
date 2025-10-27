@@ -782,7 +782,7 @@ TextureImporter:
         width: 28
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -790,6 +790,27 @@ TextureImporter:
       bones: []
       spriteID: 1538754ab6f81bf49a481ec3c15bcad6
       internalID: 234353952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Block
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 12
+        width: 25
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 360266f9a1ffc7b4ca5adcf76b14c540
+      internalID: -749412377
       vertices: []
       indices: 
       edges: []
@@ -805,6 +826,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Block: -1309419953
       Civilized-no-bg_0: 408049715
       Civilized-no-bg_1: -1998280486
       Civilized-no-bg_10: 1458939961
@@ -840,7 +862,6 @@ TextureImporter:
       Civilized-no-bg_127: 1291266154
       Civilized-no-bg_128: -1087482382
       Civilized-no-bg_129: 9808543
-      Civilized-no-bg_13: -1309419953
       Civilized-no-bg_130: 1415533297
       Civilized-no-bg_131: -1972957648
       Civilized-no-bg_132: -1815834875
