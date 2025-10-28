@@ -41,19 +41,19 @@ SceneLoader를 통해 허브 ↔ 미니게임 간 전환
 
 📁 폴더 구조 (요약)
 Assets/
- Art/                 
- Scenes/
-  Hub.unity       
-  Mini_Stack.unity
- Scripts/
-  Core/           # GameManager, SceneLoader, ScoreManager, HubScoreUI
-  Player/         # PlayerController2D, CameraFollow2D
-  Player/Interaction/  # 상호작용 시스템(Interactable, InteractionZome, LoadMiniGameInteractable, NPCStackPortal)
-  MiniGames/Stack/     # StackGame, StackGame2D, StackBlocks
-  Effects/        # CameraShake2D, SlowMo, PunchScale, FallAndFade2D
- Prefabs/
-  Player/         # Player
-  Stack/          # BcakgroundTile, BaseBlock, BlockPiece, MovingBlock
+Art/                 
+Scenes/
+Hub.unity       
+Mini_Stack.unity
+Scripts/
+Core/           # GameManager, SceneLoader, ScoreManager, HubScoreUI
+Player/         # PlayerController2D, CameraFollow2D
+Player/Interaction/  # 상호작용 시스템(Interactable, InteractionZome, LoadMiniGameInteractable, NPCStackPortal)
+MiniGames/Stack/     # StackGame, StackGame2D, StackBlocks
+Effects/        # CameraShake2D, SlowMo, PunchScale, FallAndFade2D
+Prefabs/
+Player/         # Player
+Stack/          # BcakgroundTile, BaseBlock, BlockPiece, MovingBlock
 
 5. 핵심 시스템 구조
 {시스템	설명}
