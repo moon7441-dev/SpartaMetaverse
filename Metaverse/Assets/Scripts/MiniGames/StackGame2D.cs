@@ -1,10 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class StackGame2D : MonoBehaviour
 {
-    public GameObject baseBlock; // 시작/기준 블록
+    public GameObject startPanel;      // StartPanel 오브젝트
+    public GameObject gameOverPanel;   // GameOverPanel 오브젝트
+    public TMP_Text scoreText;         // ScoreText 텍스트
+    public TMP_Text gameOverText;      // GameOverPanel 안의 큰 텍스트
+
+    bool started = false;
+    int score = 0;
+    string scoreKey = "Stack";
+
+    public GameObject baseBlock; // 시작 기준 블록
     public GameObject movingPrefab; // 이동 블록 프리팹 (SpriteRenderer + BoxCollider2D)
     public GameObject blockPiecePrefab; // 잘려나간 조각 프리팹 (SpriteRenderer + FallAndFade2D)
     public Transform effectsRoot; // 조각 정리용 부모
@@ -41,7 +51,10 @@ public class StackGame2D : MonoBehaviour
         // 시작 블록 크기를 기준으로 폭 세팅
         lastWidth = baseBlock.transform.localScale.x;
 
-        // 첫 움직이는 블록 소환
+        if (startPanel) startPanel.SetActive(true);      // 시작 전 안내 ON
+        if (gameOverPanel) gameOverPanel.SetActive(false); // 게임오버 창 OFF
+        if (scoreText) scoreText.text = "0";
+
         SpawnNext();
 
 
@@ -89,6 +102,35 @@ public class StackGame2D : MonoBehaviour
 
     void Update()
     {
+        if (isGameOver)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Time.timeScale = 1f; // 혹시 슬로모 잔류 방지
+                SceneLoader.BackToHub();
+            }
+
+            // 카메라 배경은 계속 돌려도 되고 멈춰도 되고, 여기서는 멈춘다고 가정
+            return;
+        }
+
+        // current 블록이 없으면 아직 준비중이거나 에러 상태
+        if (!current) return;
+
+        // 아직 게임 시작 안 함: 스페이스를 누르면 시작
+        if (!started)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                started = true;
+                if (startPanel) startPanel.SetActive(false); // 안내창 숨김
+            }
+
+            FollowCamera();
+            EnsureBackgroundCoverage();
+            return;
+        }
+
         if (isGameOver) return;
         if (!current) return;
 
@@ -122,21 +164,40 @@ public class StackGame2D : MonoBehaviour
             // 쌓을 데가 없으면 게임오버
             Impact(0.6f);
             isGameOver = true;
+
+            // 점수 저장 (마지막 점수 기록)
+            ScoreManager.submitScore(scoreKey, score);
+
+            // GameOver UI 띄우기
+            if (gameOverPanel) gameOverPanel.SetActive(true);
+
+            if (gameOverText)
+            {
+                int hs = ScoreManager.GetHighScore(scoreKey);
+                gameOverText.text =($"GAME OVER\nScore: {score}\nBest: {hs}\nPress E to return");
+            }
+
             return;
         }
 
-        // ------------------------------
+        score++;
+
+        if (scoreText)
+            scoreText.text = score.ToString();
+
+
+
         // 1) 잘려나가는 조각 떼서 떨어뜨리기
-        // ------------------------------
+
         float cutSize = Mathf.Abs(dx);
         if (cutSize > 0.001f)
         {
             SpawnCutPiece(dx, cutSize, prev, current, lastWidth);
         }
 
-        // ------------------------------
+       
         // 2) current 블록 "정제": 겹친 영역만 남기기
-        // ------------------------------
+       
         // 새로운 블록의 중앙은 prev와 current의 중앙 사이
         float newCenterX = (prev.position.x + current.transform.position.x) * 0.5f;
 
@@ -152,25 +213,19 @@ public class StackGame2D : MonoBehaviour
             1f
         );
 
-        // ------------------------------
         // 3) 연출 (카메라 흔들림, 살짝 커졌다가 원복 등)
-        // ------------------------------
         float quality = Mathf.InverseLerp(0f, lastWidth, overlap); // 얼마나 잘 맞췄는지 0~1
         Impact(0.18f + 0.22f * quality);
 
         var ps = current.GetComponent<PunchScale>();
         if (ps) ps.Play(0.15f, 0.12f);
 
-        // ------------------------------
         // 4) 상태 업데이트:
         //    방금 놓은 current가 이제 새로운 baseBlock이 됨
-        // ------------------------------
         lastWidth = overlap;
         baseBlock = current;
 
-        // ------------------------------
         // 5) 새로운 current 하나 위에 또 소환
-        // ------------------------------
         SpawnNext();
     }
 
