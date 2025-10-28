@@ -23,7 +23,7 @@ ScoreManager를 통해 각 미니게임별 최고점/최근점 관리<br>
 SceneLoader를 통해 허브 ↔ 미니게임 간 전환<br>
 마지막 허브 씬 이름을 자동으로 기억 후 복귀 가능<br>
 <br>
-📁 폴더 구조 (요약) <br/>
+[]폴더 구조 (요약) <br/>
 Assets/ <br>
 &nbsp;&nbsp;Art/<br>
 &nbsp;&nbsp;Scenes/ <br>
