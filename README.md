@@ -32,8 +32,8 @@ Assets/ <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Core/           # GameManager, SceneLoader, ScoreManager, HubScoreUI <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Player/         # PlayerController2D, CameraFollow2D <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Player/Interaction/  # 상호작용 시스템(Interactable, InteractionZome, LoadMiniGameInteractable, NPCStackPortal) <br>
-&nbsp;&nbsp;&nbsp;MiniGames/Stack/     # StackGame, StackGame2D, StackBlocks <br>
-&nbsp;&nbsp;&nbsp;Effects/        # CameraShake2D, SlowMo, PunchScale, FallAndFade2D <br>
+&nbsp;&nbsp;&nbsp;&nbsp;MiniGames/Stack/     # StackGame, StackGame2D, StackBlocks <br>
+&nbsp;&nbsp;&nbsp;&nbsp;Effects/        # CameraShake2D, SlowMo, PunchScale, FallAndFade2D <br>
 &nbsp;&nbsp;Prefabs/ <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Player/         # Player<br>
 &nbsp;&nbsp;&nbsp;&nbsp;Stack/          # BcakgroundTile, BaseBlock, BlockPiece, MovingBlock<br>
