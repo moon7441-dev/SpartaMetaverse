@@ -24,19 +24,19 @@ SceneLoader를 통해 허브 ↔ 미니게임 간 전환<br>
 마지막 허브 씬 이름을 자동으로 기억 후 복귀 가능<br>
 📁 폴더 구조 (요약) <br/>
 Assets/ <br>
-&nbsp;Art/<br>
-&nbsp;Scenes/ <br>
-&nbsp;&nbsp;Hub.unity <br>
-&nbsp;&nbsp;Mini_Stack.unity <br>
-&nbsp;Scripts/ <br>
-&nbsp;&nbsp;Core/           # GameManager, SceneLoader, ScoreManager, HubScoreUI <br>
-&nbsp;&nbsp;Player/         # PlayerController2D, CameraFollow2D <br>
-&nbsp;&nbsp;Player/Interaction/  # 상호작용 시스템(Interactable, InteractionZome, LoadMiniGameInteractable, NPCStackPortal) <br>
-&nbsp;MiniGames/Stack/     # StackGame, StackGame2D, StackBlocks <br>
-&nbsp;Effects/        # CameraShake2D, SlowMo, PunchScale, FallAndFade2D <br>
-&nbsp;Prefabs/ <br>
-&nbsp;&nbsp;Player/         # Player<br>
-&nbsp;&nbsp;Stack/          # BcakgroundTile, BaseBlock, BlockPiece, MovingBlock<br>
+&nbsp;&nbsp;Art/<br>
+&nbsp;&nbsp;Scenes/ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;Hub.unity <br>
+&nbsp;&nbsp;&nbsp;&nbsp;Mini_Stack.unity <br>
+&nbsp;&nbsp;Scripts/ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;Core/           # GameManager, SceneLoader, ScoreManager, HubScoreUI <br>
+&nbsp;&nbsp;&nbsp;&nbsp;Player/         # PlayerController2D, CameraFollow2D <br>
+&nbsp;&nbsp;&nbsp;&nbsp;Player/Interaction/  # 상호작용 시스템(Interactable, InteractionZome, LoadMiniGameInteractable, NPCStackPortal) <br>
+&nbsp;&nbsp;&nbsp;MiniGames/Stack/     # StackGame, StackGame2D, StackBlocks <br>
+&nbsp;&nbsp;&nbsp;Effects/        # CameraShake2D, SlowMo, PunchScale, FallAndFade2D <br>
+&nbsp;&nbsp;Prefabs/ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;Player/         # Player<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Stack/          # BcakgroundTile, BaseBlock, BlockPiece, MovingBlock<br>
 
 5. 핵심 시스템 구조<br>
 {시스템	설명}<br/>
