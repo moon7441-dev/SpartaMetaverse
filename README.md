@@ -30,7 +30,7 @@ Assets/ <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Hub.unity <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Mini_Stack.unity <br>
 &nbsp;&nbsp;Scripts/ <br>
-&nbsp;&nbsp;&nbsp;&nbsp;Core/          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# GameManager, SceneLoader, ScoreManager, HubScoreUI <br>
+&nbsp;&nbsp;&nbsp;&nbsp;Core/          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# GameManager, SceneLoader, ScoreManager, HubScoreUI <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Player/         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# PlayerController2D, CameraFollow2D <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Player/Interaction/  &nbsp;# 상호작용 시스템(Interactable, InteractionZome, LoadMiniGameInteractable, NPCStackPortal) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;MiniGames/Stack/     &nbsp;# StackGame, StackGame2D, StackBlocks <br>
