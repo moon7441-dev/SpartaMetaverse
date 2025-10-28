@@ -36,10 +36,10 @@ Assets/ <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Effects/        # CameraShake2D, SlowMo, PunchScale, FallAndFade2D <br>
 &nbsp;&nbsp;Prefabs/ <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Player/         # Player<br>
-&nbsp;&nbsp;&nbsp;&nbsp;Stack/          # BcakgroundTile, BaseBlock, BlockPiece, MovingBlock<br>
-
+&nbsp;&nbsp;&nbsp;&nbsp;Stack/          # BcakgroundTile, BaseBlock, BlockPiece, MovingBlock <br>
 5. 핵심 시스템 구조<br>
-1.시스템	설명 <br/>
+<br>
+1.시스템	설명 <br>
 <br>
 PlayerController2D	2D 탑다운 이동 구현 (Rigidbody2D) <br>
 <br>
