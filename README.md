@@ -39,24 +39,24 @@ Assets/ <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Stack/          # BcakgroundTile, BaseBlock, BlockPiece, MovingBlock<br>
 
 5. 핵심 시스템 구조<br>
-1.시스템	설명<br/>
-PlayerController2D	2D 탑다운 이동 구현 (Rigidbody2D)<br>
+1.시스템	설명 <br/>
+PlayerController2D	2D 탑다운 이동 구현 (Rigidbody2D) <br>
 InteractionZone	Trigger 영역에서 E키 입력 감지<br>
-LoadMiniGameInteractable	미니게임 씬 로드 (SceneLoader.LoadMini())<br>
-SceneLoader	씬 전환 + 허브 복귀 (BackToHub())<br>
-ScoreManager	최고점/최근 점수 관리 (PlayerPrefs)<br>
-StackGame2D	스택 게임 로직 + 타격감 효과 통합<br>
-HubScoreUI	허브 씬에서 점수 표시 UI<br>
-2.시각적 연출<br/>
-화면 흔들림: 	(CameraShake2D	블록 정지 시 충격 연출}
-슬로모션	SlowMo: 	블록 성공/실패 순간 강조
-스케일 펀치 PunchScale:  	블록 크기 변화 강조
-낙하 조각	FallAndFade2D:  	잘려나간 조각이 떨어지며 사라짐
-3.플레이 흐름<br/>
-허브 씬 진입<br>
-NPC 접근 → E키 → “Press E to Play” UI 표시<br>
-미니게임 씬으로 전환 (SceneLoader.LoadMini("Mini_Stack"))<br>
-스택 게임 플레이<br>
-게임오버 시 점수 저장 (ScoreManager.SubmitScore("Stack", score))<br>
-Back to Hub 버튼 클릭 → SceneLoader.BackToHub()<br>
-허브 씬 복귀 + 점수 UI 갱신<br>
+LoadMiniGameInteractable	미니게임 씬 로드 (SceneLoader.LoadMini()) <br>
+SceneLoader	씬 전환 + 허브 복귀 (BackToHub()) <br>
+ScoreManager	최고점/최근 점수 관리 (PlayerPrefs) <br>
+StackGame2D	스택 게임 로직 + 타격감 효과 통합 <br>
+HubScoreUI	허브 씬에서 점수 표시 UI <br>
+2.시각적 연출 <br/>
+화면 흔들림: 	(CameraShake2D	블록 정지 시 충격 연출} <br>
+슬로모션	SlowMo: 	블록 성공/실패 순간 강조 <br>
+스케일 펀치 PunchScale:  	블록 크기 변화 강조 <br>
+낙하 조각	FallAndFade2D:  	잘려나간 조각이 떨어지며 사라짐 <br>
+3.플레이 흐름 <br/>
+허브 씬 진입 <br>
+NPC 접근 → E키 → “Press E to Play” UI 표시 <br>
+미니게임 씬으로 전환 (SceneLoader.LoadMini("Mini_Stack")) <br>
+스택 게임 플레이 <br>
+게임오버 시 점수 저장 (ScoreManager.SubmitScore("Stack", score)) <br>
+Back to Hub 버튼 클릭 → SceneLoader.BackToHub() <br>
+허브 씬 복귀 + 점수 UI 갱신 <br>
