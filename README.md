@@ -5,46 +5,43 @@
 미니게임(스택 게임)을 실행하고, 점수/최고점을 저장·관리하는 시스템을 구현한 프로젝트입니다.
 -------------------------------------------------------------------------------------------------
 [주요 특징]
-1. 허브(Hub) 씬
-
-WASD로 플레이어 이동 가능
-
-NPC와 상호작용 (E 키) → 미니게임 진입
-
+1. 허브(Hub) 씬<br/>
+WASD로 플레이어 이동 가능<br/>
+NPC와 상호작용 (E 키) → 미니게임 진행<br/>
 허브 씬은 Tilemap 기반 구조
-
+<br>
 상호작용 가능한 NPC마다 다른 미니게임 연결 가능
-
+<br>
 2. 스택(Stack) 미니게임
-
+<br>
 좌우로 이동하는 블록을 스페이스바로 정지시켜 쌓기
-
+<br>
 벗어난 부분은 잘려나감
-
+<br>
 블록이 맞지 않으면 게임오버
-
+<br>
 CameraShake + SlowMo + PunchScale + 조각 파티클 효과로 타격감 강화
-
+<br>
 최고점(PlayerPrefs) 및 최근 점수 저장
-
+<br>
 3. 점수 시스템
-
+<br>
 ScoreManager를 통해 각 미니게임별 최고점/최근점 관리
-
+<br>
 허브 복귀 시 HubScoreUI가 UI 갱신
-
+<br>
 4. 씬 전환
-
+<br>
 SceneLoader를 통해 허브 ↔ 미니게임 간 전환
-
+<br>
 마지막 허브 씬 이름을 자동으로 기억 후 복귀 가능
-
+<br>
 📁 폴더 구조 (요약)
-Assets/
-Art/                 
-Scenes/
-Hub.unity       
-Mini_Stack.unity
+Assets/ <br>
+Art/    <br>           
+Scenes/ <br>
+Hub.unity <br>    
+Mini_Stack.unity <br>
 Scripts/
 Core/           # GameManager, SceneLoader, ScoreManager, HubScoreUI
 Player/         # PlayerController2D, CameraFollow2D
