@@ -24,7 +24,7 @@ SceneLoader를 통해 허브 ↔ 미니게임 간 전환<br>
 마지막 허브 씬 이름을 자동으로 기억 후 복귀 가능<br>
 📁 폴더 구조 (요약) <br/>
 Assets/ <br>
-&nbsp;Art/    <br>           
+&nbsp;Art/<br>           
 &nbsp;Scenes/ <br>
 &nbsp;&nbsp;Hub.unity <br>    
 &nbsp;&nbsp;Mini_Stack.unity <br>
